@@ -22,7 +22,7 @@
 运行train.py脚本：
 - num_epochs = 200
 - log_step = 100      # 打印info的间隔步数
-- num_workers = 0    # 线程数
+- num_workers = 16    # 线程数
 
 # 3、测试
 测试单幅图像，运行frame.py脚本
