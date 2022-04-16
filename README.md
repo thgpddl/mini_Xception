@@ -3,9 +3,9 @@
 
 来自论文[《Real-time Convolutional Neural Networks for Emotion and Gender Classification》](https://arxiv.org/pdf/1710.07557v1.pdf)
 
-当然有官方的项目:[oarriaga/face_classification](https://github.com/oarriaga/face_classification)
+当然有官方的项目：[oarriaga/face_classification](https://github.com/oarriaga/face_classification)
 
-论文解析及复现总结移步[ CSDN]()
+论文解析及复现总结移步：[Real-time Convolutional Neural Networks for Emotion and Gender Classification--O Arriaga](https://blog.csdn.net/qq_40243750/article/details/124208527)
 
 需要注意的是：
 > 官方使用keras在fer2013数据集上的表情识别精度达到了66%，本项目使用pytorch实现的精度达到了65%
