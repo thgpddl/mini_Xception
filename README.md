@@ -5,10 +5,8 @@
 
 当然有官方的项目：[oarriaga/face_classification](https://github.com/oarriaga/face_classification)
 
-论文解析及复现总结移步：[Real-time Convolutional Neural Networks for Emotion and Gender Classification--O Arriaga](https://blog.csdn.net/qq_40243750/article/details/124208527)
-
-需要注意的是：
-> 官方使用keras在fer2013数据集上的表情识别精度达到了66%，本项目使用pytorch实现的精度达到了65%
+关于论文详解，可以移步博客：[Real-time Convolutional Neural Networks for Emotion and Gender Classification--O Arriaga](https://blog.csdn.net/qq_40243750/article/details/124208527)，需要重点关注的是：
+> 论文中基于kera实现的，在fer2013数据集上达到了66%的精度。本文是基于Pytorch实现的，最高只能达到65%的精度。对于这1%~2%精度差异未找到原因，只能归结于框架的不同（不同框架之间的效果会有差异）。
 
 # 1、安装轮子
 使用命令：
