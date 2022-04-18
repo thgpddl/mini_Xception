@@ -16,6 +16,11 @@
 > pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
+# 2、下载数据集
+下将链接中的train.csv和test.csv文件下载下来：[数据集](https://www.aliyundrive.com/s/fQz68x23mtk)
+然后将train.csv和test.csv文件放在dataset文件夹中即可
+
+
 # 2、训练
 运行train.py脚本：
 - num_epochs = 200
