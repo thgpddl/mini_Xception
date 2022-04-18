@@ -3,6 +3,10 @@ import numpy as np
 import torch
 from utils.Model import mini_XCEPTION
 
+# 使用的opencv人脸检测器，似乎不太好用
+
+device = torch.device("cpu")
+
 
 def preprocess_input(x):
     x = x.astype('float32')
@@ -19,18 +23,17 @@ emotion_model_path = 'output/E135_0.6466.pth'
 emotion_labels = {0: 'angry', 1: 'disgust', 2: 'fear', 3: 'happy', 4: 'sad', 5: 'surprise', 6: 'neutral'}
 
 face_detection = cv2.CascadeClassifier(detection_model_path)
-model = mini_XCEPTION(num_classes=7)
-model.load_state_dict(torch.load(emotion_model_path))
+model = mini_XCEPTION(num_classes=7).to(device)
+model.load_state_dict(torch.load(emotion_model_path, map_location=device))
 
 input_size = (48, 48)
 
-
-cap=cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 
 with torch.no_grad():
     while True:
-        ret,src=cap.read()
-        frame=cv2.cvtColor(src,cv2.COLOR_BGR2GRAY)
+        ret, src = cap.read()
+        frame = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
         faces = face_detection.detectMultiScale(frame, scaleFactor=1.3, minNeighbors=5)
         for face_coordinates in faces:
             x, y, w, h = face_coordinates
@@ -42,6 +45,7 @@ with torch.no_grad():
             gray_face = preprocess_input(gray_face)
             inp = torch.unsqueeze(gray_face, 0)
             inp = torch.unsqueeze(inp, 0)
+            inp = inp.to(device)
             emotion_label_arg = np.argmax(model(inp)).item()
             emotion_text = emotion_labels[emotion_label_arg]
 
