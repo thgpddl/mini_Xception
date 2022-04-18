@@ -31,9 +31,15 @@
 - log_step = 100      # 打印info的间隔步数
 - num_workers = 16    # 线程数
 
-# 4、测试
+# 4、eval
+运行eval.py脚本，会计算出测试集的精度和loss，并且显示出混淆矩阵，并保存为图片。
+![ConfusionMatrix](https://user-images.githubusercontent.com/48787805/163796143-8d134aa7-9e51-433b-9da8-61c651f4bb5d.png)
+
+
+
+# 5、测试
 测试单幅图像，运行frame.py脚本
 摄像头实时预测，运行video.py脚本
 
-# 5、DeBug
+# 6、DeBug
 1. 出现“BrokenPipeError: [Errno 32] Broken pipe”，把线程数num_workers=0即可。
