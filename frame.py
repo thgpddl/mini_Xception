@@ -3,7 +3,8 @@ import numpy as np
 import torch
 from utils.Model import mini_XCEPTION
 
-device = torch.device("cpu")
+device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+print("devicea:",device)
 
 def preprocess_input(x):
     x = x.astype('float32')
