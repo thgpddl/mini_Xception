@@ -69,7 +69,7 @@ def eval():
         loss = loss_fn(labels_pd, labels.to(device))
         total_test_loss += loss.item()
         total_test_acc += acc
-        count += 1
+        count +=len(labels)
 
     mean_test_loss = total_test_loss / count
     mean_test_acc = total_test_acc / count
