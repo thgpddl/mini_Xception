@@ -5,8 +5,8 @@ from utils.Model import mini_XCEPTION
 
 # 使用的opencv人脸检测器，似乎不太好用
 
-device = torch.device("cpu")
-
+device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+print("devicea:",device)
 
 def preprocess_input(x):
     x = x.astype('float32')
