@@ -18,18 +18,18 @@
 
 # 2、下载数据集
 下将链接中的train.csv和test.csv文件下载下来：[数据集](https://www.aliyundrive.com/s/fQz68x23mtk)
-然后将train.csv和test.csv文件放在dataset文件夹中即可
+然后在mini_Xception根目录创建dataset文件夹，将train.csv和test.csv文件放在dataset文件夹中即可
 
 
-# 2、训练
+# 3、训练
 运行train.py脚本：
 - num_epochs = 200
 - log_step = 100      # 打印info的间隔步数
 - num_workers = 16    # 线程数
 
-# 3、测试
+# 4、测试
 测试单幅图像，运行frame.py脚本
 摄像头实时预测，运行video.py脚本
 
-# 4、DeBug
+# 5、DeBug
 1. 出现“BrokenPipeError: [Errno 32] Broken pipe”，把线程数num_workers=0即可。
