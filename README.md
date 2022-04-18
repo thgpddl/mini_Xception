@@ -8,6 +8,9 @@
 关于论文详解，可以移步博客：[Real-time Convolutional Neural Networks for Emotion and Gender Classification--O Arriaga](https://blog.csdn.net/qq_40243750/article/details/124208527)，需要重点关注的是：
 > 论文中基于kera实现的，在fer2013数据集上达到了66%的精度。本文是基于Pytorch实现的，最高只能达到65%的精度。对于这1%~2%精度差异未找到原因，只能归结于框架的不同（不同框架之间的效果会有差异）。
 
+我复现论文的总结，可以移步：[Pytorch实现表情识别卷积神经网络网络：mini_Xception
+](https://blog.csdn.net/qq_40243750/article/details/124226066?spm=1001.2014.3001.5501)
+
 # 1、安装轮子
 使用命令：
 > pip install -r requirements.txt
