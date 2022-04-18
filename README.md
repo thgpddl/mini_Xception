@@ -21,6 +21,7 @@
 
 # 2、下载数据集
 下将链接中的train.csv和test.csv文件下载下来：[数据集](https://www.aliyundrive.com/s/fQz68x23mtk)
+
 然后在mini_Xception根目录创建dataset文件夹，将train.csv和test.csv文件放在dataset文件夹中即可
 
 
