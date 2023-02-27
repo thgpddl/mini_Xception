@@ -40,7 +40,7 @@ test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num
 optimizer = torch.optim.Adam(lr=0.001, params=model.parameters())
 loss_fn = torch.nn.CrossEntropyLoss()
 scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer,
-                                                       mode='min',
+                                                       mode='max',
                                                        factor=0.1,
                                                        patience=int(patience / 4),
                                                        verbose=True)
@@ -93,6 +93,8 @@ def train_f():
 
         mean_test_loss = total_test_loss / count
         mean_test_acc = total_test_acc / count
+        
+        scheduler.step(mean_test_acc)
         print("evla\tloss:{:.4f}\tacc:{:.4f}".format(mean_test_loss, mean_test_acc))
 
         writter.add_scalar(tag="test_acc", step=Epoch, value=mean_test_acc)
